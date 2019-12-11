@@ -1,0 +1,151 @@
+// installation de git
+sudo apt-get install git-all
+git --version
+git config --global user.name rgirodon
+git config --global user.email remy.girodon@gmail.com
+
+
+// creation d'un premier repo local
+cd ~
+mkdir dta_first_repo_git
+cd dta_first_repo_git/
+git init
+>> création d'un fichier, d'un dossier, d'un fichier dans ce dossier
+git status
+git add .
+git status
+git commit -m "XXXX"
+git log
+
+>> modification d'un fichier, ajout d'un autre fichier
+git status
+git add .
+git status
+git commit -m "XXXX"
+git log
+
+>> modification d'un fichier
+git commit -a -m "XXX"
+
+>> modification d'un fichier
+git diff
+git commit -a -m "XXX"
+git log
+
+>> voir la version d'un fichier pour un commit donné :
+git checkout <SHADuCommit>
+
+>> visualisation du fichier modifié dans le dernier commit (cat...)
+
+>> revenir sur la version en cours :
+git checkout master
+
+>> visualisation du fichier modifié dans le dernier commit (cat...)
+
+>> corriger des erreurs : 
+git commit --amend -m "XXX" 
+git reset HEAD^
+git reset --hard HEAD^
+git checkout <nomfichier>
+
+
+// installation smartgit
+sudo mv smartgit-linux-XXX.tar.gz /opt
+cd /opt
+sudo tar -zxvf smartgit-linux-XXX.tar.gz
+cd smartgit/bin
+./add-menuitem.sh
+
+
+// ouvrir le même repo avec smartgit
+> Repository > Add or create...
+> View Journal, menu Log, fermer la vue Log
+>> modification d'un fichier, ajout d'un autre fichier
+> Bouton commit
+
+>> create an account on github
+
+>> follow http://www.syntevo.com/doc/display/SG/GitHub+integration to set up smartgit / github integration
+
+>> create empty repository on github
+
+>> add remote repository (in https)
+
+>> push
+
+// delete local directory
+rm -rf dta_first_repo_git
+
+>> clone du repo en local (avec smartgit)
+
+>> creation d'une branche feature/implementIndex et checkout de cette branche
+
+>> modification du fichier index.php
+
+>> commit sur la branche feature/implementIndex
+
+>> checkout sur master : constater que le fichier n'a pas bougé
+
+>> checkout sur feature/implementIndex : constater que le fichier a bougé
+
+>> checkout sur master
+
+>> merger feature/implementIndex dans master (la branche courante)
+
+>> pousser le master : constater que le fichier est bien modifié sur le remote
+
+>> supprimer la branche feature/implementIndex
+
+>> creation d'une branche feature/implementMain et checkout de cette branche
+
+>> ajout du fichier main.php
+
+>> commit and push sur le remote de cette branche : constater que la branche est bien présente sur github
+
+>> création d'une pull request sur github
+
+>> merge de la pull request sur github et suppression de la branche feature/implementMain sur le remote
+
+>> checkout du master
+
+>> realisation d'un fetch en local : constater que le remote est en avance
+
+>> realisation du pull sur le master
+
+>> delete de la branche locale feature/implementMain
+
+>> ajout d'un tag v1.0
+
+>> push de ce tag : constater qu'une release est présente sur github
+
+>> creation d'une branche fix/errorInMainPage et checkout de cette branche
+
+>> modification du fichier main.php
+
+>> Stash all dans la fenêtre Log
+
+>> checkout de master
+
+>> checkout de fix/errorInMainPage
+
+>> apply and drop du stash dans la fenêtre Log
+
+
+
+
+
+
+
+>> commit de la branche fix/errorInMainPage en local
+
+>> ajout d'un autre fichier (shoppingList.php par exemple)
+
+>> commit de la branche fix/errorInMainPage en local
+
+>> checkout de master
+
+>> cherrypick du dernier commit
+
+>> commit and push du master
+
+>> rebase de la branche fix/errorInMainPage sur le master (manual drag and drop from log window)
